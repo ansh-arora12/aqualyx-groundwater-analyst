@@ -48,12 +48,36 @@ export const Hero = () => {
         
         <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {[
-            { icon: Upload, title: "Upload Data", desc: "CSV/Excel support with validation" },
-            { icon: BarChart3, title: "Auto Calculate", desc: "HPI, MI, Cd indices computed instantly" },
-            { icon: Map, title: "Visualize", desc: "Interactive maps and charts" },
-            { icon: Download, title: "Export", desc: "PDF/CSV reports ready for publication" }
+            { 
+              icon: Upload, 
+              title: "Upload Data", 
+              desc: "CSV/Excel support with validation",
+              action: () => document.getElementById('data-upload-section')?.scrollIntoView({ behavior: 'smooth' })
+            },
+            { 
+              icon: BarChart3, 
+              title: "Auto Calculate", 
+              desc: "HPI, MI, Cd indices computed instantly",
+              action: () => document.getElementById('stats-dashboard')?.scrollIntoView({ behavior: 'smooth' })
+            },
+            { 
+              icon: Map, 
+              title: "Visualize", 
+              desc: "Interactive maps and charts",
+              action: () => document.getElementById('sample-map')?.scrollIntoView({ behavior: 'smooth' })
+            },
+            { 
+              icon: Download, 
+              title: "Export", 
+              desc: "PDF/CSV reports ready for publication",
+              action: () => document.getElementById('export-options')?.scrollIntoView({ behavior: 'smooth' })
+            }
           ].map((feature, index) => (
-            <Card key={index} className="p-6 bg-white/10 backdrop-blur-sm border-white/20 text-center hover:bg-white/15 transition-all duration-300">
+            <Card 
+              key={index} 
+              className="p-6 bg-white/10 backdrop-blur-sm border-white/20 text-center hover:bg-white/15 transition-all duration-300 cursor-pointer transform hover:scale-105"
+              onClick={feature.action}
+            >
               <feature.icon className="h-8 w-8 mx-auto mb-3 text-white" />
               <h3 className="font-semibold mb-2 text-white">{feature.title}</h3>
               <p className="text-sm text-white/80">{feature.desc}</p>

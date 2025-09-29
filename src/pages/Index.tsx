@@ -148,7 +148,7 @@ const Index = () => {
           <SampleMap results={analysisResults} />
           
           {/* Additional Export Options */}
-          <section className="py-16 bg-secondary/20">
+          <section id="export-options" className="py-16 bg-secondary/20">
             <div className="container mx-auto px-4 text-center">
               <h2 className="text-2xl font-bold mb-6 font-scientific">Export Options</h2>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
